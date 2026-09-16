@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class PizzaTest {
-
     Pizza pizza;
     int ingredientesPadrao;
 
