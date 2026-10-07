@@ -26,7 +26,7 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.Objects;
 
-public class Pedido {
+public abstract class Pedido {
     private  static int ultimoPedido;
     private LocalDate data;
     protected LinkedList<Pizza> pizzas;
@@ -60,7 +60,9 @@ public class Pedido {
         return  idPedido;
     }
 
-    public double precoAPagar(){
+    public abstract double precoAPagar();
+
+    protected double valorPizzas(){
         double preco = 0d;
         for (Pizza pizza : pizzas) {
             preco += pizza.valorFinal();

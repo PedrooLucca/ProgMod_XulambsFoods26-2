@@ -4,13 +4,14 @@ import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class PedidoTest {
+public class PedidoLocalTest {
     Pedido pedido;
     Pizza pizzaVazia;
+    static final double SERVICO = 0.1;
 
     @BeforeEach 
     public void setUp(){
-        pedido = new Pedido();
+        pedido = new PedidoLocal();
         pizzaVazia = new Pizza();
         pedido.adicionarPizza(pizzaVazia);
     }
@@ -40,7 +41,7 @@ public class PedidoTest {
         //Act
         double preco = pedido.precoAPagar();
         //Assert
-        assertEquals(29d, preco, 0.01);
+        assertEquals(29d * SERVICO, preco, 0.01);
     }
 
     @Test 
@@ -51,7 +52,7 @@ public class PedidoTest {
         //Act
         double preco = pedido.precoAPagar();
         //Assert
-        assertEquals(68d, preco, 0.01);
+        assertEquals(68d * SERVICO, preco, 0.01);
     }
 
     @Test 
